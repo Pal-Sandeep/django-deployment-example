@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    {% load %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base Html</title>
+    <link rel="stylesheet" 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" 
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <ul class="nav navbar-nav">
+                <li ><a class="navbar-brand" href="{% url 'index'%}">Brand</a></li>
+                <li><a class="navbar-link" href="{% url 'admin:index'%}">Admin</a></li>
+                <li><a class="navbar-link" href="{% url 'basic_app:other'%}">Other</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        {% block body_block %}
+        <!-- Anything outside of this will be inherited if you extend -->
+        {% endblock %}
+    </div>
+</body>
+</html>
